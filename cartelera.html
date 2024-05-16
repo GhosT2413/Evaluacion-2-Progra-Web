@@ -9,10 +9,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="viewport" content="initial-scale=1, maximum-scale=1">
   <!-- site metas -->
-  <title>Entro</title>
+  <title>Satiros</title>
   <meta name="keywords" content="">
   <meta name="description" content="">
   <meta name="author" content="">
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js" 
+    integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" 
+    integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" 
+    integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="css/card.css">
+  <link rel="stylesheet" href="css/button.css">
   <!-- fevicon -->
   <link rel="icon" href="images/fevicon.png" type="image/gif" />
   <!-- bootstrap css -->
@@ -35,9 +43,48 @@
 <body class="main-layout contineer_page">
   <!-- loader  -->
   <div class="loader_bg">
+
     <div class="loader"><img src="images/loading.gif" alt="#" /></div>
   </div>
   <!-- end loader -->
+
+  <!-- API IMDB -->
+  <script src="assets/js/jquery.min.js"></script>
+  <script>
+  const settings = {
+	async: true,
+	crossDomain: true,
+	url: 'https://imdb-top-100-movies.p.rapidapi.com/',
+	method: 'GET',
+	headers: {
+		'X-RapidAPI-Key': 'e01b3f9b8dmsh0c2717e63961e4fp1e5dfcjsn1519d9d0f658',
+		'X-RapidAPI-Host': 'imdb-top-100-movies.p.rapidapi.com'
+	}
+};
+
+$.ajax(settings).done(function (response) {
+	console.log(response);
+  $.each(response , function(i, item){
+                $("#cine").append(`<div class="col-md-4">
+                  <div class="card">
+                    <img src="${item.image}"/>
+                  <b></b>
+                  <div class="content">
+                    <p class="title">${item.title}</p>
+
+                    <a href="${item.imdb_link}" target="blank"> <button class="button">Ver en IMDB</button></a>
+                  </div>
+                </div>`)
+            })
+            
+        
+        });
+  </script>
+  <!-- END API IMDB -->
+
+
+
+
   <!-- header -->
   <header>
     <!-- header inner -->
@@ -49,7 +96,7 @@
               <div class="full">
                 <div class="center-desk">
                   <div class="logo">
-                    <a href="index.html"><img src="images/logo.png" alt="#" /></a>
+                    <a href="index.html"><img src="images/Satiros.png" alt="#" /></a>
                   </div>
                 </div>
               </div>
@@ -60,14 +107,13 @@
                 <div class="limit-box">
                   <nav class="main-menu ">
                     <ul class="menu-area-main">
-                      <li > <a href="index.html">Home</a> </li>
+                      <li> <a href="index.html">Home</a> </li>
                   
                       <li> <a href="about.html">About</a> </li>
-                      <li> <a href="concerts.html">Concerts </a> </li>
-                      <li class="active"> <a href="gallery.html">Gallery</a> </li>
-                      <li> <a href="contact.html">Contact</a> </li>
+                      <li class="active"> <a href="cartelera.html">Cartelera</a> </li>
+                      <li> <a href="contact.html">Contactanos</a> </li>
       
-                        <li > <a   href="#contact">login</a> </li>
+                        <li > <a   href="login.html">login</a> </li>
                       <li  > <a  class="last_manu" href="#"><img src="images/search_icon.png" alt="#" /></a> </li>
                       
                      </ul>
@@ -91,85 +137,23 @@
     <div class="row">
       <div class="col-md-12">
         <div class="heding">
-           <h2>Gallery</h2>
+           <h2>Cartelera</h2>
         </div>
       </div>
     </div>
   </div>
 </div>
+<br>
 
 
-<div id="gallery" class="Gallery">
-  <div class="container"> 
-    <div class="row display_boxflex">
-      <div class="col-xl-8 col-lg-8 col-md-8 col-sm-12">
-        <div class="row">
-          <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 margi_bott">
-            <div class="Gallery_img">
-              <figure><img src="images/Gallery1.jpg" alt="#"/></figure>
-            </div>
-            <div class="hover_box">
-             
-              <ul class="icon_hu">
-                 <h3>Music night</h3>
-                <li><a href="#"><img src="icon/h.png" alt="#"/></a></li>
-                 <li><a href="#"><img src="icon/h.png" alt="#"/></a></li>
-              </ul>
-            </div>
-          </div>
-          <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 margi_bott">
-            <div class="Gallery_img">
-              <figure><img src="images/Gallery2.jpg" alt="#"/></figure>
-            </div>
-            <div class="hover_box">
-             
-              <ul class="icon_hu">
-                 <h3>Music night</h3>
-                <li><a href="#"><img src="icon/h.png" alt="#"/></a></li>
-                 <li><a href="#"><img src="icon/h.png" alt="#"/></a></li>
-              </ul>
-            </div>
-          </div>
-          <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 margi_bott1">
-            <div class="Gallery_img">
-              <figure><img src="images/Gallery3.jpg" alt="#"/></figure>
-            </div>
-            <div class="hover_box">
-             
-              <ul class="icon_hu">
-                 <h3>Music night</h3>
-                <li><a href="#"><img src="icon/h.png" alt="#"/></a></li>
-                 <li><a href="#"><img src="icon/h.png" alt="#"/></a></li>
-              </ul>
-            </div>
-          </div>
-          <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
-            <div class="Gallery_img">
-              <figure><img src="images/Gallery4.jpg" alt="#"/></figure>
-            </div>
-            <div class="hover_box">
-             
-              <ul class="icon_hu">
-                 <h3>Music night</h3>
-                <li><a href="#"><img src="icon/h.png" alt="#"/></a></li>
-                 <li><a href="#"><img src="icon/h.png" alt="#"/></a></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
-        <div class="Gallery_text">
-          <div class="titlepage">
-            <h2>Gallery</h2>
-          </div>
-          <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to usin</p>
-          <a href="Javascript:void(0)">Read More</a>
-        </div>
-      </div>
-    </div>
+
+<div class="container">
+  <div class="row" id="cine">
+    
   </div>
 </div>
+
+
 
 <!-- end Gallery --> 
 
@@ -182,37 +166,52 @@
         <div class="container">
           <div class="row">
             <div class="col-md-12">
-              <form class="contact_bg">
-            <div class="row">
-              <div class="col-md-12">
-                <div class="titlepage">
-                  <h2>Contact us</h2>
+              <form id="contactForm" class="contact_bg" onsubmit="return validateForm()">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="col-md-12">
+                            <input class="contactus" placeholder="Nombre" type="text" name="Your Name" required minlength="6" maxlength="40">
+                        </div>
+                        <div class="col-md-12">
+                            <input class="contactus" placeholder="Email" type="email" name="Your Email" required>
+                        </div>
+                        <div class="col-md-12">
+                            <input class="contactus" placeholder="Telefono" type="text" name="Your Phone" pattern="[0-9]{9}" title="Ingrese un número de teléfono válido (9 dígitos)" required>
+                        </div>
+                        <div class="col-md-12">
+                            <textarea class="textarea" placeholder="Mensaje" type="text" name="Message" required minlength="5" maxlength="200" title="favor ingresa tu mensaje"></textarea>
+                        </div>
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+                            <button class="send" type="submit">Enviar</button>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-md-12">
-                  <input class="contactus" placeholder="Your Name" type="text" name="Your Name">
-                </div>
-                <div class="col-md-12">
-                  <input class="contactus" placeholder="Your Email" type="text" name="Your Email">
-                </div>
-                <div class="col-md-12">
-                  <input class="contactus" placeholder="Your Phone" type="text" name="Your Phone">
-                </div>
-                <div class="col-md-12">
-                  <textarea class="textarea" placeholder="Message" type="text" name="Message"></textarea>
-                </div>
-                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
-                  <button class="send">Send</button>
-                </div>
-              </div>
-            </div>
             </form>
+            
+            <script>
+                function validateForm() {
+                    var form = document.getElementById("contactForm");
+                    var inputs = form.querySelectorAll("input, textarea");
+            
+                    for (var i = 0; i < inputs.length; i++) {
+                        if (!inputs[i].value) {
+                            alert("Por favor, complete todos los campos antes de enviar.");
+                            return false;
+                        }
+                    }
+            
+                    alert("Su solicitud de contacto ha sido enviada");
+                    return true;
+                }
+            </script>
+            
 
             </div>
             <div class="col-md-12 border_top">
               <form class="news">
                <h3>Newsletter</h3>
                 <input class="newslatter" placeholder="ENTER YOUR MAIL" type="text" name=" ENTER YOUR MAIL">
-                <button class="submit">Subscribe</button>
+                <button class="submit">Subscribete</button>
               </form>
             </div>
             <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 ">
@@ -246,12 +245,6 @@
 
                 </div>
 
-              </div>
-               <div class="container">
-              <div class="copyright">
-               
-                  <p>Copyright 2019 All Right Reserved By <a href="https://html.design/">Free  html Templates</a></p>
-                </div>
               </div>
             </div>
           </footr>

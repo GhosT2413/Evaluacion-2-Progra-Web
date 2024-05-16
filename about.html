@@ -41,7 +41,7 @@
   <!-- header -->
   <header>
     <!-- header inner -->
-
+   
       <div class="header">
         <div class="container">
           <div class="row">
@@ -49,7 +49,7 @@
               <div class="full">
                 <div class="center-desk">
                   <div class="logo">
-                    <a href="index.html"><img src="images/logo.png" alt="#" /></a>
+                    <a href="index.html"><img src="images/Satiros.png" alt="#" /></a>
                   </div>
                 </div>
               </div>
@@ -60,14 +60,13 @@
                 <div class="limit-box">
                   <nav class="main-menu ">
                     <ul class="menu-area-main">
-                      <li class="active"> <a href="index.html">Home</a> </li>
-                   
+                      <li> <a href="index.html">Home</a> </li>
+                  
                       <li class="active"> <a href="about.html">About</a> </li>
-                      <li> <a href="Concerts.html">Concerts </a> </li>
-                      <li> <a href="gallery.html">Gallery</a> </li>
+                      <li> <a href="cartelera.html">Cartelera</a> </li>
                       <li> <a href="contact.html">Contact</a> </li>
       
-                        <li > <a   href="#contact">login</a> </li>
+                        <li > <a   href="login.html">login</a> </li>
                       <li  > <a  class="last_manu" href="#"><img src="images/search_icon.png" alt="#" /></a> </li>
                       
                      </ul>
@@ -79,11 +78,6 @@
          </div>
        </div>
      </div>
-     <!-- end header inner -->
-
-     <!-- end header -->
-   
-</header>
 
 <div class="backgro_mh">
   <div class="container">
@@ -130,37 +124,52 @@
         <div class="container">
           <div class="row">
             <div class="col-md-12">
-              <form class="contact_bg">
-            <div class="row">
-              <div class="col-md-12">
-                <div class="titlepage">
-                  <h2>Contact us</h2>
+              <form id="contactForm" class="contact_bg" onsubmit="return validateForm()">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="col-md-12">
+                            <input class="contactus" placeholder="Nombre" type="text" name="Your Name" required minlength="6" maxlength="40">
+                        </div>
+                        <div class="col-md-12">
+                            <input class="contactus" placeholder="Email" type="email" name="Your Email" required>
+                        </div>
+                        <div class="col-md-12">
+                            <input class="contactus" placeholder="Telefono" type="text" name="Your Phone" pattern="[0-9]{9}" title="Ingrese un número de teléfono válido (9 dígitos)" required>
+                        </div>
+                        <div class="col-md-12">
+                            <textarea class="textarea" placeholder="Mensaje" type="text" name="Message" required minlength="5" maxlength="200" title="favor ingresa tu mensaje"></textarea>
+                        </div>
+                        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+                            <button class="send" type="submit">Enviar</button>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-md-12">
-                  <input class="contactus" placeholder="Your Name" type="text" name="Your Name">
-                </div>
-                <div class="col-md-12">
-                  <input class="contactus" placeholder="Your Email" type="text" name="Your Email">
-                </div>
-                <div class="col-md-12">
-                  <input class="contactus" placeholder="Your Phone" type="text" name="Your Phone">
-                </div>
-                <div class="col-md-12">
-                  <textarea class="textarea" placeholder="Message" type="text" name="Message"></textarea>
-                </div>
-                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
-                  <button class="send">Send</button>
-                </div>
-              </div>
-            </div>
             </form>
+            
+            <script>
+                function validateForm() {
+                    var form = document.getElementById("contactForm");
+                    var inputs = form.querySelectorAll("input, textarea");
+            
+                    for (var i = 0; i < inputs.length; i++) {
+                        if (!inputs[i].value) {
+                            alert("Por favor, complete todos los campos antes de enviar.");
+                            return false;
+                        }
+                    }
+            
+                    alert("Su solicitud de contacto ha sido enviada");
+                    return true;
+                }
+            </script>
+            
 
             </div>
             <div class="col-md-12 border_top">
               <form class="news">
                <h3>Newsletter</h3>
                 <input class="newslatter" placeholder="ENTER YOUR MAIL" type="text" name=" ENTER YOUR MAIL">
-                <button class="submit">Subscribe</button>
+                <button class="submit">Subscribete</button>
               </form>
             </div>
             <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 ">
@@ -194,12 +203,6 @@
 
                 </div>
 
-              </div>
-               <div class="container">
-              <div class="copyright">
-               
-                  <p>Copyright 2019 All Right Reserved By <a href="https://html.design/">Free  html Templates</a></p>
-                </div>
               </div>
             </div>
           </footr>
