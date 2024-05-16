@@ -20,6 +20,9 @@
  html {
      scroll-behavior: smooth;
 }
+.error{
+    color: red;
+}
  body {
      color: #666666;
      font-size: 14px;
@@ -971,7 +974,7 @@ transition: all 0.3s ease-in;
 }
  
  .header-top {
-     background:url(../images/banner2.jpg);
+     background:url(../images/cine.jpg);
      background-size: 100% 100%;
      background-repeat: no-repeat;
      padding-bottom: 50px;
@@ -979,6 +982,7 @@ transition: all 0.3s ease-in;
      min-height: 980px;
 }
  .header {
+    
      position: absolute;
      z-index: 999;
      width: 100%;
@@ -998,11 +1002,11 @@ transition: all 0.3s ease-in;
   .text-bg span {
      font-size: 80px;
 line-height: 80px;
-color: #0fc9da;
+color: #6aa2f7;
 text-transform: uppercase;
   }
  .text-bg h1 {
-    color: #fff;
+    color: #6aa2f7;
 padding-top: 20px;
 font-size: 100px;
 line-height: 85px;
@@ -1013,7 +1017,7 @@ font-weight: bold;
  .text-bg p {
     font-size: 17px;
 display: block;
-color: #fff;
+color: #3c0d52;
 line-height: 30px;
 padding-bottom: 50px;
 font-weight: 400;
@@ -1021,7 +1025,7 @@ font-weight: 400;
  .text-bg a {
      font-size: 16px;
 background-color: #fff;
-color: #000;
+color: #6aa2f7;
 padding: 12px 0px;
 max-width: 253px;
 width: 100%;
