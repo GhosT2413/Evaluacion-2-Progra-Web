@@ -11,6 +11,8 @@
   <meta name="description" content="">
   <meta name="author" content="">
   <link rel="icon" href="images/fevicon.png" type="image/gif" />
+  <script src="../Evaluacion-2-Progra-Web/js/modal.js"></script>
+  <link rel="stylesheet" href="css/modal.css">
   <link rel="stylesheet" href="css/bootstrap.min.css">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/responsive.css">  
@@ -45,7 +47,7 @@
               <div class="full">
                 <div class="center-desk">
                   <div class="logo">
-                    <a href="index.html"><img src="images/Satiros.png" alt="#" /></a>
+                    <img src="images/Logo Cinema.jpeg" alt="#" />
                   </div>
                 </div>
               </div>
@@ -60,7 +62,7 @@
                   
                       <li> <a href="about.html">About</a> </li>
                       <li> <a href="cartelera.html">Cartelera</a> </li>
-                      <li class="active"> <a href="contact.html">Contact</a> </li>
+                      <li class="active"> <a href="contact.html">Contactanos</a> </li>
       
                         <li > <a   href="login.html">login</a> </li>
                       <li  > <a  class="last_manu" href="#"><img src="images/search_icon.png" alt="#" /></a> </li>
@@ -137,10 +139,14 @@
             </div>
             <div class="col-md-12 border_top">
               <form class="news">
-               <h3>Newsletter</h3>
-                <input class="newslatter" placeholder="ENTER YOUR MAIL" type="email" name=" ENTER YOUR MAIL" required>
-                <button class="submit">Subscribete</button>
-              </form>
+                <h3>Subscribete para más información y cupones</h3>
+                <input class="newslatter" placeholder="ENTER YOUR MAIL" type="email" name="ENTER YOUR MAIL" required>
+                <button class="submit" type="button" onclick="showModal()">Subscribete</button>
+            </form>
+        
+            
+        
+            
             </div>
             <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 ">
               <div class="row">
@@ -148,13 +154,13 @@
                   <div class="address">
                     <ul class="loca">
                       <li>
-                        <a href="#"><img src="icon/loc.png" alt="#" /></a>Locations
+                        <a href="#"><img src="icon/loc.png" alt="#" /></a>Ubicaciones
                    
                         <li>
                           
-                            <a href="#"><img src="icon/call.png" alt="#" /></a>+12586954775 </li>
+                            <a href="#"><img src="icon/call.png" alt="#" /></a>(+56) 9 1234 5678 </li>
                           <li>
-                            <a href="#"><img src="icon/email.png" alt="#" /></a>demo@gmail.com </li>
+                            <a href="#"><img src="icon/email.png" alt="#" /></a>example@gmail.com </li>
                           </ul>
                          
 
@@ -177,6 +183,16 @@
             </div>
           </footr>
           <!-- end footer -->
+
+          <!-- Modal -->
+          <div id="myModal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal()">&times;</span>
+                <p>Te subscribiste con éxito!</p>
+                <button class="close-btn" onclick="closeModal()">Seguir viendo</button>
+            </div>
+        </div>
+
           <!-- Javascript files-->
           <script src="js/jquery.min.js"></script>
           <script src="js/popper.min.js"></script>
@@ -187,7 +203,7 @@
           <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
           <script src="js/custom.js"></script>
           <script src="https:cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
-
+          <script src="script.js"></script>
 
 
 
