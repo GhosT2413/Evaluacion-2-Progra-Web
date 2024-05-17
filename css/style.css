@@ -1132,7 +1132,7 @@ transition: ease all 0.5s;
 
 /** about section **/
  .about {
-     background:url(../images/about_bg.jpg);
+     background:url();
     background-repeat: no-repeat;
 background-size: cover;
 background-position: center;
