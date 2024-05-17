@@ -13,6 +13,7 @@
   <meta name="keywords" content="">
   <meta name="description" content="">
   <meta name="author" content="">
+  <link rel="stylesheet" href="css/modal.css">
   <link rel="stylesheet" href="css/bootstrap.min.css">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/responsive.css">
@@ -166,9 +167,9 @@
           </div>
           <div class="col-md-12 border_top">
             <form class="news">
-             <h3>Subscribete para más información y cupones</h3>
-              <input class="newslatter" placeholder="ENTER YOUR MAIL" type="email" name=" ENTER YOUR MAIL" required>
-              <button class="submit">Subscribete</button>
+              <h3>Subscribete para más información y cupones</h3>
+              <input class="newslatter" placeholder="ENTER YOUR MAIL" type="email" name="ENTER YOUR MAIL" required>
+              <button class="submit" type="button" onclick="showModal()">Subscribete</button>
             </form>
           </div>
           <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 ">
@@ -235,6 +236,16 @@
     });
   </script>
 
+
+     <!-- Modal -->
+     <div id="myModal" class="modal">
+      <div class="modal-content">
+        
+        <p>Te subscribiste con éxito!</p>
+        <button class="close-btn" onclick="closeModal()">Seguir viendo</button>
+      </div>
+    </div>
+
   <!-- Javascript files-->
   <script src="js/jquery.min.js"></script>
   <script src="js/popper.min.js"></script>
@@ -247,5 +258,6 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="js/modal.js"></script>
 </body>
 </html>
